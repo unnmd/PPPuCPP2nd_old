@@ -1,4 +1,4 @@
-#include "std_lib_facilities.h"
+#include "../lib/std_lib_facilities.h"
 //#include <algorithm>
 //#include <iostream>
 //#include <cmath>
@@ -17,11 +17,11 @@
 
 int main()
   {
-    //int a = 2000;
+    //int a = 20000;
     //char c = a;
     //int b = c;
     //if (a != b)
-      //cout << "Ой!: " << a << "!=" << b << 't\n';
+      //cout << "Ой!: " << a << "!=" << b << '\n';
     //else
       //cout << "Ого! однако у вас большой chat\n";
 
