@@ -2,15 +2,10 @@
 
 int main()
   {
-    constexpr double m = 100;
-    constexpr double in = 2.54;
-    constexpr double ft = 12;
+
     double num { 0 };
     double smallest { 0 };
     double biggest { 0  };
-
-    cout << "Введите длини и еденицу измерения (m, i, f или cm)"
-
 
     while (cin >> num) 
     {
