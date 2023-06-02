@@ -2,26 +2,26 @@
 
 int main()
   {
-
-    double num { 0 };
+    double val { 0 };
     double smallest { 0 };
-    double biggest { 0  };
+    double biggest { 0 };
 
-    while (cin >> num) 
+
+    cout << "Введите число: ";
+    while (cin >> val)
     {
-      cout << num;
-      if(num < smallest)
-      {
-        smallest = num;
-        cout << " (Наименьшее среди введены)\n";
+      cout << val;
+      if (val < smallest){
+        //smallest = val;
+        biggest = val;
+        cout << " Наименьшее значение\n"; 
       }
-      if (num > biggest) 
-      {
-        biggest = num;
-        cout << " (Наибольшее среди введеных)\n";
+      if (val>biggest){
+        //biggest = val;
+        smallest = val;
+        cout << " Наибольшее значение\n"; 
       }
-      //cout << " Число равно: " << num << "\n";
-  }
+    }
     //keep_window_open();
     return 0;
 
