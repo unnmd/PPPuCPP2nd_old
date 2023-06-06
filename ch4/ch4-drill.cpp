@@ -7,7 +7,6 @@ int main()
     constexpr double m = 1;
     constexpr double in = 2.54;
     constexpr double ft = 12;
-    constexpr double coeff = 0.3048;
     double num { 0 };
     double num_conv { 0 };
     double smallest { 0 };
@@ -15,6 +14,8 @@ int main()
     double sum { 0 };
     string unit { " " };
     bool is_valid = true;
+    bool is_first = true;
+    vector<double> vals;
     cout << "Введите длини и еденицу измерения (m, in, ft или cm): ";
 
     while (cin >> num >> unit) 
@@ -37,32 +38,34 @@ int main()
       }
       else {
         is_valid = false;
+
       }
   
-      if(is_valid){
-        cout << "ok" << '\n';
-        cout << sum << " сумма введеных чисел\n";
-      }
+      if(is_valid){    
+        if(num_conv < smallest || is_first)
+            {
+            smallest = num_conv;
+            cout << " (Наименьшее среди введены)\n";
+            }
+        if (num_conv > biggest || is_first) 
+            {
+            biggest = num_conv;
+            cout << " (Наибольшее среди введеных)\n";
+            }
+        is_first = false;
+        vals.push_back(num_conv);
+        }
       else {
-        cout << "not ok" << '\n';
-        break;
+        cout << "Вы ввели не верную еденицу измерения" << '\n';
+        is_valid = true;
       }
-
-      cout << num_conv << " Метра \n";
-        
-      if(num < smallest)
-      {
-        smallest = num;
-        cout << " (Наименьшее среди введены)\n";
-      }
-      if (num > biggest) 
-      {
-        biggest = num;
-        cout << " (Наибольшее среди введеных)\n";
-      }
+    }
+    cout << sum << " сумма введеных чисел\n";
+    sort(vals.begin(), vals.end());
+    for (int i = 0; i<vals.size(); ++i)
+       cout << vals[i] << " m\n";  
       //cout << " Число равно: " << num << "\n";
-  }
-    //keep_window_open();
+      //keep_window_open();
     return 0;
 
   }
